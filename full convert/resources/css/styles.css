@@ -1,0 +1,54 @@
+html {
+    font-family: 'Mulish', sans-serif;
+}
+
+.button-color{    background-image: linear-gradient(90deg, #0088CC , #006DAE );}
+
+.primary-color{    color: #172940; }
+.secondary-color{    color: #4F5464; }
+.third-color{    color: #68B0F4; }
+.bg-blue{ background-color: #478AC9; }
+.bg-lightblue{background-color:#F5F8FF; }
+.bg-navy{ background-color: #172940; }
+.bg-darknavy{ background-color: #0F2035; }
+.light-blue{    color: #006DAE;}
+.btn {  border: 2px solid #006DAE;}
+
+.features-section{
+    background-image: url("background/bgfeatures.png");
+    background-size: cover;
+    background-position: center ;
+}
+.hero-section{
+    background-image: url("background/bg.jpg");
+    background-size: cover;
+    background-position: center;
+}
+.trial-section{
+    background-image: url("background/bg1.png");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    z-index: 2 !important;
+}
+.trial-section::after{
+    content:'';
+    position: absolute;
+    background-image: url("background/Mask\ Group.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    top: 0;
+    height:100%;
+    width: 100%;
+    z-index: 1 !important;
+}
+.plans:focus,
+.plans:hover{
+    color: #006DAE !important;
+}
+@media screen and (max-width: 480px) {
+    .smtext{
+        font-size:10px !important;
+    }
+}

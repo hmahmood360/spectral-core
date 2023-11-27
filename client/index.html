@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="resources/css/styles.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600&display=swap" rel="stylesheet"> 
+    <title>Client</title>
+</head>
+<body>
+    <div class="relative min-h-screen md:flex">
+
+        <!-- mobile menu bar -->
+        <div class="bg2 flex justify-end px-4 md:hidden">
+          <!-- mobile menu button -->
+          <button class="mobile-menu-button p-4 focus:outline-none focus:bg-gray-200">
+            <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+      
+        <!-- sidebar -->
+        <div class="sidebar bg2 text-blue-100 w-64 2xl:w-96 2xl:px-8 space-y-6 py-4 px-2 absolute inset-y-0 left-0 transform -translate-x-full md:relative md:translate-x-0 transition duration-200 ease-in-out">
+      
+          <!-- logo -->
+          <a href="#" class="text-white flex items-center space-x-2 px-4 border-b pb-4">
+            <img src="resources/assets/logo.svg" alt="">
+          </a>
+      
+          <!-- nav -->
+          <nav class="third-color mx-auto px-4">
+            <div @click.away="open = false" class="relative" x-data="{ open: false }">
+                <button @click="open = !open" class="flex  items-center w-full px-1 py-3 mt-2 text-sm font-bold text-left bg-transparent  md:w-auto md:inline md:mt-0   focus:outline-none focus:shadow-outline">
+                  <span class="uppercase">licences</span>
+                  <svg  fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': open, 'rotate-0': !open}" class=" inline-block w-4 h-4 mt-1  transition-transform duration-200 transform md:-mt-1"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                </button>
+                <div x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="relative right-0 w-full mt-2 origin-top-right md:w-48">
+                  <div class="px-2 py-2  ">
+                    <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg  md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#">Link #1</a>
+                    <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg  md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#">Link #2</a>
+                    <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg  md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#">Link #3</a>
+                  </div>
+                </div>
+            </div> 
+            <div @click.away="open = false" class="relative" x-data="{ open: false }">
+                <button @click="open = !open" class="flex flex-row items-center w-full px-1 py-3 mt-2 text-sm font-bold text-left bg-transparent  md:w-auto md:inline md:mt-0   focus:outline-none focus:shadow-outline">
+                  <span class="uppercase">purchases</span>
+                  <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': open, 'rotate-0': !open}" class="inline w-4 h-4 mt-1  transition-transform duration-200 transform md:-mt-1"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                </button>
+                <div x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="relative right-0 w-full mt-2 origin-top-right md:w-48">
+                  <div class="px-2 py-2  ">
+                    <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg  md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#">Link #1</a>
+                    <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg  md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#">Link #2</a>
+                    <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg  md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#">Link #3</a>
+                  </div>
+                </div>
+            </div> 
+            <div @click.away="open = false" class="relative" x-data="{ open: false }">
+                <button @click="open = !open" class="flex flex-row items-center w-full px-1 py-3 mt-2 text-sm font-bold text-left bg-transparent  md:w-auto md:inline md:mt-0   focus:outline-none focus:shadow-outline">
+                  <span class="uppercase">quotes & invoices</span>
+                  <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': open, 'rotate-0': !open}" class="inline w-4 h-4 mt-1  transition-transform duration-200 transform md:-mt-1"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                </button>
+                <div x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="relative right-0 w-full mt-2 origin-top-right md:w-48">
+                  <div class="px-2 py-2  ">
+                    <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg  md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#">Link #1</a>
+                    <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg  md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#">Link #2</a>
+                    <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg  md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#">Link #3</a>
+                  </div>
+                </div>
+            </div> 
+            <div @click.away="open = false" class="relative" x-data="{ open: false }">
+                <button @click="open = !open" class="flex flex-row  items-center w-full px-1 py-3 mt-2 text-sm font-bold text-left bg-transparent  md:w-auto md:inline md:mt-0   focus:outline-none focus:shadow-outline">
+                  <span class="uppercase">SETTINGS</span>
+                  <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': open, 'rotate-0': !open}" class="inline w-4 h-4 mt-1  transition-transform duration-200 transform md:-mt-1 "><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                </button>
+                <div x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="relative right-0 w-full mt-2 origin-top-right md:w-48">
+                  <div class="px-2 py-2  ">
+                    <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg  md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#">Link #1</a>
+                    <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg  md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#">Link #2</a>
+                    <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg  md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#">Link #3</a>
+                  </div>
+                </div>
+            </div> 
+            
+            
+          </nav>
+        </div>
+      
+        <!-- content -->
+        <div class="flex-1 p-3 lg:p-10 third-color">
+          <div class="container mx-auto px-4 lg:px-10 ">
+              <h2 class="text-2xl lg:text-4xl font-black  mb-6">Your licences</h2>
+              <div class="p-6 border rounded">
+                <div class="flex justify-between items-center mb-3">
+                    <h2 class="text-base md:text-xl font-bold ">Documenter pro</h2>
+                    <a href="#"><img src="resources/assets/fa-angle-down.svg" alt=""></a>
+                </div>
+                <div class="md:flex justify-between items-center pb-6 border-b">
+                    <p class="font-semibold secondary-color text-sm md:text-base">July 27th 2020 (maintenance until <span class="light-blue">July 27th 2021)</span></p>
+                    <p class="text-xs text-black p-2 bg font-bold rounded-lg mt-3 md:mt-0 text-center">Subscribe for maintenance</p>
+                </div>
+                <div class="md:grid grid-cols-5  mt-8">
+                    <div class="font-extrabold  mb-2 md:mb-0">Licensed to:</div>
+                    <div class="col-span-3 md:flex secondary-color font-semibold">
+                        <p class="mr-4">Damir Bulić (damir@bulic.com)</p>
+                        <a class="light-blue " href="#">Change <img class="inline ml-1" src="resources/assets/Vector.svg" alt=""></a>
+                    </div>
+                </div>
+                <div class="md:grid grid-cols-5  mt-4">
+                    <div class="font-extrabold mb-2 md:mb-0">Activation code:</div>
+                    <div class="col-span-3 flex secondary-color font-semibold">
+                        <p class="mr-4">23432sdf323f</p>
+                    </div>
+                </div>
+                <div class="md:flex justify-start space-y-3 md:space-y-0 md:space-x-4 mt-6 text-sm">
+                    <a href="" class="flex  justify-center items-center py-2 px-6 button-color  text-white font-bold rounded-lg transition duration-300">Primary Action</a> 
+                    <a href="" class="flex  justify-center items-center py-2 px-6 button-color  text-white font-bold rounded-lg transition duration-300">Primary Action</a> 
+                    <a href="" class="flex  justify-center items-center py-2 px-6 btn light-blue font-bold rounded-lg transition duration-300">Secondary Action</a> 
+                </div>
+
+                <h3 class="text-lg font-extrabold mt-8">1 of 3 activations used</h3>
+                <div class=" mt-3 text-sm overflow-auto">
+                    <table class="table-fixed w-full border">
+                        <thead class="bg1 light-blue ">
+                          <tr class="">
+                              <th class="py-3 px-6 text-left w-36">Time</th>
+                              <th class="py-3 px-6 text-left w-36">OS</th>
+                              <th class="py-3 px-6 text-left w-36">Activate</th>
+                              <th class="py-3 px-6 text-left w-36">Users</th>
+                              <th class="py-3 px-6 text-left w-36">HDD</th>
+                          </tr>
+                        </thead>
+                        <tbody class="secondary-color ">
+                          <tr>
+                              <td class="py-3 px-6 text-left light-blue">Deactivate <img class="inline ml-1"  src="resources/assets/Vector.svg" alt=""></td>
+                              <td class="py-3 px-6 text-left">July 27, 2020</td>
+                              <td class="py-3 px-6 text-left">10.0.19041</td>
+                              <td class="py-3 px-6 text-left">Desktop-2MO6P34/Damir</td>
+                              <td class="py-3 px-6 text-left">Samsund SDD 970  PRO 1 TR</td>
+                          </tr>
+                          
+                          
+                        </tbody>
+                      </table>
+                </div>
+              </div>
+              <div class="p-6 mt-10 border rounded mb-20">
+                <div class="flex justify-between items-center mb-3">
+                    <h2 class="text-base md:text-xl font-bold ">Full Convert Ultimate</h2>
+                    <a href="#"><img src="resources/assets/fa-angle-down.svg" alt=""></a>
+                </div>
+                <div class=" pb-6 border-b">
+                    <p class="font-semibold secondary-color">marth 17th 2020 (maintenance never expired)</p>
+                </div>
+                <div class="md:grid grid-cols-5  mt-8">
+                    <div class="font-extrabold mb-2 md:mb-0">Licensed to:</div>
+                    <div class="col-span-3 md:flex secondary-color font-semibold">
+                        <p class="mr-4">Damir Bulić (damir@bulic.com)</p>
+                        <a class="light-blue " href="#">Change <img class="inline ml-1" src="resources/assets/Vector.svg" alt=""></a>
+                    </div>
+                </div>
+                <div class="md:grid grid-cols-5  mt-4">
+                    <div class="font-extrabold mb-2 md:mb-0">Activation code:</div>
+                    <div class="col-span-3 md:flex secondary-color font-semibold">
+                        <p class="mr-4">23432sdf323f</p>
+                    </div>
+                </div>
+                <div class="md:flex justify-start space-y-3 md:space-y-0 md:space-x-4 mt-6 text-sm">
+                    <a href="" class=" flex justify-center items-center py-2 px-6 button-color  text-white font-bold rounded-lg transition duration-300">Primary Action</a> 
+                    <a href="" class="flex justify-center items-center py-2 px-6 button-color  text-white font-bold rounded-lg transition duration-300">Primary Action</a> 
+                    <a href="" class="flex justify-center items-center py-2 px-6 btn light-blue font-bold rounded-lg transition duration-300">Secondary Action</a> 
+                </div>
+
+                <h3 class="text-lg font-extrabold mt-8">9 of 10 activations used</h3>
+                <div class=" mt-3 text-sm overflow-auto">
+                    <table class="table-fixed w-full border">
+                        <thead class="bg1 light-blue ">
+                          <tr class="">
+                              <th class="w-36 py-3 px-6 text-left">Time</th>
+                              <th class="w-36 py-3 px-6 text-left">OS</th>
+                              <th class="w-36 py-3 px-6 text-left">Activate</th>
+                              <th class="w-36 py-3 px-6 text-left">Users</th>
+                              <th class="w-36 py-3 px-6 text-left">HDD</th>
+                          </tr>
+                        </thead>
+                        <tbody class="secondary-color ">
+                          <tr>
+                              <td class="py-3 px-6 text-left light-blue">Deactivate <img class="inline ml-1"  src="resources/assets/Vector.svg" alt=""></td>
+                              <td class="py-3 px-6 text-left">July 27, 2020</td>
+                              <td class="py-3 px-6 text-left">10.0.19041</td>
+                              <td class="py-3 px-6 text-left">Desktop-2MO6P34/Damir</td>
+                              <td class="py-3 px-6 text-left">Samsund SDD 970  PRO 1 TR</td>
+                          </tr>
+                          <tr>
+                              <td class="py-3 px-6 text-left light-blue">Deactivate <img class="inline ml-1"  src="resources/assets/Vector.svg" alt=""></td>
+                              <td class="py-3 px-6 text-left">July 27, 2020</td>
+                              <td class="py-3 px-6 text-left">10.0.19041</td>
+                              <td class="py-3 px-6 text-left">Desktop-2MO6P34/Damir</td>
+                              <td class="py-3 px-6 text-left">Samsund SDD 970  PRO 1 TR</td>
+                          </tr>
+                          <tr>
+                              <td class="py-3 px-6 text-left light-blue">Deactivate <img class="inline ml-1"  src="resources/assets/Vector.svg" alt=""></td>
+                              <td class="py-3 px-6 text-left">July 27, 2020</td>
+                              <td class="py-3 px-6 text-left">10.0.19041</td>
+                              <td class="py-3 px-6 text-left">Desktop-2MO6P34/Damir</td>
+                              <td class="py-3 px-6 text-left">Samsund SDD 970  PRO 1 TR</td>
+                          </tr>
+                          <tr>
+                              <td class="py-3 px-6 text-left light-blue">Deactivate <img class="inline ml-1"  src="resources/assets/Vector.svg" alt=""></td>
+                              <td class="py-3 px-6 text-left">July 27, 2020</td>
+                              <td class="py-3 px-6 text-left">10.0.19041</td>
+                              <td class="py-3 px-6 text-left">Desktop-2MO6P34/Damir</td>
+                              <td class="py-3 px-6 text-left">Samsund SDD 970  PRO 1 TR</td>
+                          </tr>
+                          <tr>
+                              <td class="py-3 px-6 text-left light-blue">Deactivate <img class="inline ml-1"  src="resources/assets/Vector.svg" alt=""></td>
+                              <td class="py-3 px-6 text-left">July 27, 2020</td>
+                              <td class="py-3 px-6 text-left">10.0.19041</td>
+                              <td class="py-3 px-6 text-left">Desktop-2MO6P34/Damir</td>
+                              <td class="py-3 px-6 text-left">Samsund SDD 970  PRO 1 TR</td>
+                          </tr>
+                          <tr>
+                              <td class="py-3 px-6 text-left light-blue">Deactivate <img class="inline ml-1"  src="resources/assets/Vector.svg" alt=""></td>
+                              <td class="py-3 px-6 text-left">July 27, 2020</td>
+                              <td class="py-3 px-6 text-left">10.0.19041</td>
+                              <td class="py-3 px-6 text-left">Desktop-2MO6P34/Damir</td>
+                              <td class="py-3 px-6 text-left">Samsund SDD 970  PRO 1 TR</td>
+                          </tr>
+                          <tr>
+                              <td class="py-3 px-6 text-left light-blue">Deactivate <img class="inline ml-1"  src="resources/assets/Vector.svg" alt=""></td>
+                              <td class="py-3 px-6 text-left">July 27, 2020</td>
+                              <td class="py-3 px-6 text-left">10.0.19041</td>
+                              <td class="py-3 px-6 text-left">Desktop-2MO6P34/Damir</td>
+                              <td class="py-3 px-6 text-left">Samsund SDD 970  PRO 1 TR</td>
+                          </tr>
+                          <tr>
+                              <td class="py-3 px-6 text-left light-blue">Deactivate <img class="inline ml-1"  src="resources/assets/Vector.svg" alt=""></td>
+                              <td class="py-3 px-6 text-left">July 27, 2020</td>
+                              <td class="py-3 px-6 text-left">10.0.19041</td>
+                              <td class="py-3 px-6 text-left">Desktop-2MO6P34/Damir</td>
+                              <td class="py-3 px-6 text-left">Samsund SDD 970  PRO 1 TR</td>
+                          </tr>
+                          <tr>
+                              <td class="py-3 px-6 text-left light-blue">Deactivate <img class="inline ml-1"  src="resources/assets/Vector.svg" alt=""></td>
+                              <td class="py-3 px-6 text-left">July 27, 2020</td>
+                              <td class="py-3 px-6 text-left">10.0.19041</td>
+                              <td class="py-3 px-6 text-left">Desktop-2MO6P34/Damir</td>
+                              <td class="py-3 px-6 text-left">Samsund SDD 970  PRO 1 TR</td>
+                          </tr>
+                          
+                          
+                        </tbody>
+                      </table>
+                </div>
+              </div>
+          </div>
+        </div>
+      
+      </div>
+
+      <script>
+        const btn = document.querySelector(".mobile-menu-button");
+        const sidebar = document.querySelector(".sidebar");
+
+        // add our event listener for the click
+        btn.addEventListener("click", () => {
+        sidebar.classList.toggle("-translate-x-full");
+        });
+      </script>
+      <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+html {
+    font-family: 'Mulish', sans-serif;
+}
+
+.primary-color{    color: #373F41; }
+.secondary-color{   color: #737B7D; }
+.third-color{   color:#000F1D; }
+.light-blue{    color: #006DAE; }
+.button-color{    background-image: linear-gradient(90deg, #0088CC , #006DAE );}
+.btn{
+    border: 1px solid #006DAE;
+}
+.bg2{
+    background-image: url("background/bg.jpg");
+    background-size: cover;
+}
+.bg{
+    background-image: url("background/bg1.png");
+    background-size: cover;
+}
+.bg1{
+    background-image: url("background/bg2.png");
+    background-size: cover;
+}

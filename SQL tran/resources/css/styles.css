@@ -1,0 +1,50 @@
+    html {
+        font-family: 'Mulish', sans-serif;
+    }
+.button-color{    
+    background-color: #3C64B1;
+}
+.primary-color{    color: #373F41; }
+.secondary-color{    color: #737B7D; }
+.third-color{ color: #5F6567;}
+.light-blue{    color: #006DAE;}
+.bg-navy{    background-color: #3C64B1;}
+.hero-section{
+    background-image: url("background/bg.jpg");
+    background-size: cover;
+    background-position: center;
+}
+.image img{
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.faq-section{
+    background-image: url("background/bg2.png");
+    background-size: cover;
+    background-position: center;
+}
+
+.footer{
+    background-image: url("background/bg3.jpg");
+    background-size: cover;
+}
+.footerr{
+    background-image: url("background/bg4.png");
+    background-size: cover;
+}
+.vl {
+    border-left: 2px solid #3C64B1;
+    height: 100px;
+    border-style: dotted;
+}
+.herotop{
+    background-image: url("background/bg5.png");
+    background-size: cover;
+}
+
+.navitem:hover,
+.navitem:focus{
+    color: #006DAE;
+}
